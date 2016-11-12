@@ -1,8 +1,8 @@
-App.factory('UserService', ['$http','$q', function($http,$q){
+App.factory('UserService', ['$https','$q', function($http,$q){
 	
 	return {
 			 fetchAllUsers: function(){
-				 return $http.get('http://localhost:8080/user/')
+				 return $http.get('https://localhost:8080/user/')
 				 .then( 
 						 function(response){
 							 return response.data;
@@ -15,7 +15,7 @@ App.factory('UserService', ['$http','$q', function($http,$q){
 			 },
 			 
 			 createUser: function(user){
-				 return $http.post('http://localhost:8080/user/', user)
+				 return $http.post('https://localhost:8080/user/', user)
 				 .then( 
 						 function(response){
 							 return response.data;
@@ -28,7 +28,7 @@ App.factory('UserService', ['$http','$q', function($http,$q){
 			 },
 			 
 			 updateUser: function(user, id){
-				 return $http.put('http://localhost:8080/user/'+id, user)
+				 return $http.put('https://localhost:8080/user/'+id, user)
 				 .then( 
 						 function(response){
 							 return response.data;
@@ -41,7 +41,7 @@ App.factory('UserService', ['$http','$q', function($http,$q){
 			 },
 			 
 			 deleteUser: function(id){
-				 return $http.delete('http://localhost:8080/user/'+id)
+				 return $http.delete('https://localhost:8080/user/'+id)
 				 .then( 
 						 function(response){
 							 return response.data;
